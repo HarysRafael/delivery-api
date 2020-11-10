@@ -3,8 +3,6 @@ package com.br.deliveryapi.service;
 import com.br.deliveryapi.modelo.Cliente;
 import com.br.deliveryapi.modelo.Produto;
 import com.br.deliveryapi.notificacao.Notificador;
-import com.br.deliveryapi.notificacao.NotificadorEmail;
-import com.br.deliveryapi.notificacao.NotificadorSMS;
 
 public class EmissaoNotaFiscalService {
 
