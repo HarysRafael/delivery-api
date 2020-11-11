@@ -4,6 +4,7 @@ import com.br.deliveryapi.modelo.Cliente;
 
 import org.springframework.stereotype.Component;
 
+@TipoDoNotificador(NivelUrgencia.NAOURGENTE)
 @Component
 public class NotificadorEmail implements Notificador{ 
 

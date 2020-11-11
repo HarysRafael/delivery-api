@@ -1,27 +1,28 @@
 package com.br.deliveryapi.service;
 
 import com.br.deliveryapi.modelo.Cliente;
+import com.br.deliveryapi.notificacao.NivelUrgencia;
 import com.br.deliveryapi.notificacao.Notificador;
+import com.br.deliveryapi.notificacao.TipoDoNotificador;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Component;
+
 
 @Component
 public class AtivacaoClienteService {
 
+    @TipoDoNotificador(NivelUrgencia.NAOURGENTE)
     @Autowired
     private Notificador notificador;
-
-    public AtivacaoClienteService(Notificador notificador){
-        this.notificador = notificador;
-    }
-
     
+    @Autowired
+    private ApplicationEventPublisher eventPublisher;
+
     public void ativarCliente(Cliente cliente){
         cliente.ativar();
-
-       notificador.notificar(cliente, "Cadastro realizado com sucesso!");
-
+        eventPublisher.publishEvent(new ClienteAtivadoEvent(cliente));
     }
 
 }
