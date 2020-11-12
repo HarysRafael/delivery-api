@@ -10,9 +10,9 @@ import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
 @Component
-public class NotificaçãoService {
+public class NotificacaoService {
 
-    @TipoDoNotificador(NivelUrgencia.URGENTE)
+    @TipoDoNotificador(NivelUrgencia.NAOURGENTE)
     @Autowired
     private Notificador notificador;
 
