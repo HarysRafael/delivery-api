@@ -1,18 +1,17 @@
-package com.br.deliveryapi.modelo;
-
-import java.math.BigDecimal;
+package com.br.deliveryapi.domain.dtos;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-@NoArgsConstructor
+@Builder
 @AllArgsConstructor
-public class Produto {
+@NoArgsConstructor
+public class CozinhaDto {
 
+    private Long id;
     private String nome;
-    private BigDecimal valorTotal;
-
     
 }
